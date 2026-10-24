@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kamaal Abdisalan — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!--
+  HOW TO EDIT THIS STARTER
+  - Anything in a highlighted [bracket] is a placeholder. Replace it, then delete the brackets.
+  - Search for "TODO" to find every link you need to fill in.
+  - To remove the yellow highlight once you're done, delete the .todo rule in the CSS.
+-->
+<style>
+  :root {
+    --wall: #EDEFF1;
+    --surface: #FFFFFF;
+    --ink: #1B2230;
+    --muted: #5A6372;
+    --line: #D3D7DD;
+    --brass: #85631F;
+    --teal: #2C6468;
+    --todo: #FFF0BF;
+    --code-bg: #1B2230;
+    --code-ink: #E6E9EE;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --wall: #12161D;
+      --surface: #1A2029;
+      --ink: #E6E9EE;
+      --muted: #9AA3B2;
+      --line: #2C3440;
+      --brass: #D2AE63;
+      --teal: #74B6BB;
+      --todo: #3D3419;
+      --code-bg: #0D1117;
+      --code-ink: #E6E9EE;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --wall: #12161D;
+    --surface: #1A2029;
+    --ink: #E6E9EE;
+    --muted: #9AA3B2;
+    --line: #2C3440;
+    --brass: #D2AE63;
+    --teal: #74B6BB;
+    --todo: #3D3419;
+    --code-bg: #0D1117;
+    --code-ink: #E6E9EE;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--wall);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg, video { max-width: 100%; display: block; }
+  a { color: var(--teal); text-underline-offset: 0.18em; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+
+  .todo { background: var(--todo); border-radius: 3px; padding: 0 0.2em; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+  /* Header */
+  .site-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: 1.5rem; }
+  .site-head .mark { font-family: var(--display); font-weight: 800; font-size: 1.125rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .site-head nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .site-head nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.975rem; }
+  .site-head nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding-block: clamp(3rem, 9vw, 7rem) clamp(3rem, 7vw, 5rem); }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.75rem, 9vw, 6.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin: 0 0 1.5rem;
+    max-width: 12ch;
+  }
+  .hero .lede { font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.45; max-width: 34ch; margin: 0 0 1rem; }
+  .hero .sub { color: var(--muted); max-width: 58ch; margin: 0 0 2rem; }
+  .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; font-weight: 600; text-decoration: none;
+    padding: 0.7rem 1.25rem; border-radius: 6px; border: 2px solid var(--ink);
+  }
+  .btn-solid { background: var(--ink); color: var(--wall); }
+  .btn-solid:hover { background: var(--teal); border-color: var(--teal); color: var(--wall); }
+  .btn-line { color: var(--ink); }
+  .btn-line:hover { background: var(--surface); color: var(--ink); }
+
+  /* Sections */
+  section { padding-block: clamp(2.5rem, 6vw, 4.5rem); border-top: 1px solid var(--line); }
+  h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -0.025em; line-height: 1.1; margin: 0 0 2rem; }
+  h3 { font-family: var(--display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.01em; line-height: 1.25; margin: 0 0 0.5rem; }
+  h4 { font-family: var(--display); font-weight: 600; font-size: 1.1rem; margin: 2rem 0 0.5rem; }
+  p { margin: 0 0 1rem; }
+  .prose { max-width: 66ch; }
+
+  /* Featured exhibit */
+  .exhibit { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+  .media { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .media figcaption { padding: 0.75rem 1rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+  .watch { position: relative; display: block; color: inherit; }
+  .play { position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 50%; background: var(--ink); opacity: 0.92; }
+  .play::after { content: ""; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border-style: solid; border-width: 14px 0 14px 23px; border-color: transparent transparent transparent var(--wall); }
+  .watch:hover .play { background: var(--teal); }
+  .plan .wallline { fill: none; stroke: var(--ink); stroke-width: 3; }
+  .plan .inner { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  .plan .cone { fill: var(--teal); opacity: 0.22; }
+  .plan .route { fill: none; stroke: var(--brass); stroke-width: 2; stroke-dasharray: 6 6; }
+  .plan .dot-guard { fill: var(--teal); }
+  .plan .dot-dino { fill: var(--brass); }
+  .plan .art { fill: var(--surface); stroke: var(--ink); stroke-width: 1.5; }
+  .plan text { fill: var(--muted); font-family: var(--body); font-size: 14px; }
+
+  /* Museum-style wall label */
+  .placard { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--brass); border-radius: 4px 8px 8px 4px; padding: 1.5rem; }
+  .placard .title { font-family: var(--display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.25rem; }
+  .placard .credit { font-style: italic; color: var(--muted); margin: 0 0 1rem; }
+  .placard dl { margin: 0 0 1.25rem; display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1rem; font-size: 0.975rem; }
+  .placard dt { color: var(--muted); }
+  .placard dd { margin: 0; font-weight: 600; }
+  .placard .links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .placard .links a { font-weight: 600; }
+
+  .breakdown { margin-top: 2.5rem; }
+  .breakdown ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+  .breakdown li { margin-bottom: 0.5rem; }
+  .code { background: var(--code-bg); color: var(--code-ink); border-radius: 8px; overflow-x: auto; margin: 0; }
+  .code pre { margin: 0; padding: 1.25rem; font-family: var(--mono); font-size: 0.85rem; line-height: 1.6; }
+  .code .c { color: #8B96A8; }
+  .code .k { color: #D2AE63; }
+  .code-note { color: var(--muted); font-size: 0.9rem; margin-top: 0.6rem; }
+
+  /* More work */
+  .more { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+  .more .placard { border-left-color: var(--teal); }
+  .more .placard .title { font-size: 1.3rem; }
+  .slot { aspect-ratio: 16 / 9; border: 2px dashed var(--line); border-radius: 6px; display: grid; place-items: center; color: var(--muted); font-size: 0.9rem; text-align: center; padding: 1rem; margin-bottom: 1rem; }
+
+  /* About + skills */
+  .about { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); }
+  .skills dl { margin: 0; }
+  .skills dt { font-family: var(--display); font-weight: 600; font-size: 1.05rem; margin-top: 1.25rem; }
+  .skills dt:first-child { margin-top: 0; }
+  .skills dd { margin: 0.25rem 0 0; color: var(--muted); }
+
+  /* Contact */
+  .contact-line { font-family: var(--display); font-weight: 600; font-size: clamp(1.4rem, 3.5vw, 2.1rem); letter-spacing: -0.02em; margin: 0 0 1.5rem; word-break: break-word; }
+  .contact-line a { color: var(--ink); text-decoration-color: var(--brass); text-decoration-thickness: 3px; }
+  .contact-line a:hover { color: var(--teal); }
+  .contact-links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-weight: 600; }
+
+  footer { padding-block: 2rem 3rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+  @media (max-width: 820px) {
+    .exhibit, .breakdown, .about { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a class="mark" href="#top">Kamaal Abdisalan</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <!-- Upload your resume to the repo as resume.pdf -->
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>Kamaal Abdisalan</h1>
+      <p class="lede">I build games and the systems that make them work.</p>
+      <p class="sub">Computer Science and Game Development student at Northeastern University, graduating May 2028. I’m looking for a <span class="todo">[Spring/Fall 2027]</span> co-op in game development or software engineering.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#work">See my work</a>
+        <a class="btn btn-line" href="resume.pdf" target="_blank" rel="noopener">View resume</a>
+      </div>
+    </div>
+
+    <section id="work" aria-labelledby="work-h">
+      <h2 id="work-h">Work</h2>
+
+      <article aria-label="Escape the Museum">
+        <div class="exhibit">
+          <figure class="media" style="margin:0">
+            <div style="aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/tiRlUCuNRws" title="Escape the Museum gameplay" style="width:100%;height:100%;border:0;display:block" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <figcaption><a href="https://www.youtube.com/watch?v=tiRlUCuNRws" target="_blank" rel="noopener">Watch the gameplay video on YouTube</a></figcaption>
+          </figure>
+
+          <aside class="placard">
+            <p class="title">Escape the Museum</p>
+            <p class="credit">Kamaal Abdisalan, with 2 teammates</p>
+            <dl>
+              <dt>Made with</dt><dd>Unity, C#</dd>
+              <dt>Date</dt><dd>June 2026</dd>
+              <dt>Genre</dt><dd>First-person stealth, 3 levels</dd>
+              <dt>My role</dt><dd>Gameplay programmer</dd>
+              <dt>Length</dt><dd class="todo">[X weeks]</dd>
+            </dl>
+            <div class="links">
+              <a href="https://play.unity.com/en/games/916cf432-4bc4-4c2b-8381-4cba051c8df3/fp-gold-release" target="_blank" rel="noopener">Play in your browser</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="breakdown">
+          <div class="prose">
+            <h3>What I built</h3>
+            <ul>
+              <li>Dinosaur enemy AI with patrol, chase, and bite states that reacts to the player’s position.</li>
+              <li>Guard patrols with vision detection that ends the run when a guard spots the player.</li>
+              <li>Artifact collection with pickup animation, plus spinning traps across all three levels.</li>
+              <li>Player movement, built together with my two teammates in a shared Unity project.</li>
+            </ul>
+
+            <h4>What I’d do differently</h4>
+            <p class="todo">[One or two sentences on what you learned: a bug you fixed, a design you’d rethink, or how playtesting changed the game. Recruiters like seeing reflection.]</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <div class="about">
+        <div class="prose">
+          <p>I’m a Computer Science and Game Development student at Northeastern University. I like working on the systems underneath a game, like enemy behavior, detection, and the rules that make a level feel fair, and I’m just as interested in software engineering outside of games.</p>
+          <p>Outside of class I’ve worked since high school, most recently as a garage manager at VPNE, where I lead a team and run revenue audits. Before that I was a security officer and an IT intern at the Boston Public Library. Those jobs taught me to be dependable, stay calm when something goes wrong, and solve problems for real people.</p>
+          <p>I speak English, Somali, and Arabic.</p>
+        </div>
+        <div class="skills">
+          <dl>
+            <dt>Programming</dt>
+            <dd>C#, Java, Python, C++</dd>
+            <dt>Game development</dt>
+            <dd>Unity, game AI and state machines, level design, rapid prototyping</dd>
+            <dt>Tools</dt>
+            <dd>Git, GitHub, VS Code, Gradle, Excel, Google Workspace</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <p class="contact-line"><a href="mailto:kamaal.abdisalan0@gmail.com">kamaal.abdisalan0@gmail.com</a></p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/kamaal-abdisalan-20b28a305" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- TODO: your itch.io page -->
+        <a href="#" target="_blank" rel="noopener">itch.io</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Kamaal Abdisalan, Boston, MA</footer>
+</div>
+
+<script>
+  // Smooth in-page navigation that works inside embedded viewers
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    if (!id) { a.addEventListener('click', function (e) { e.preventDefault(); }); return; }
+    a.addEventListener('click', function (e) {
+      var target = document.getElementById(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
